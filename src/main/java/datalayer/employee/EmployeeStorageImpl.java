@@ -26,7 +26,7 @@ public class EmployeeStorageImpl implements EmployeeStorage {
 
 
     @Override
-    public Customer getEmployeeWithId(int employeeId) throws SQLException {
+    public Employee getEmployeeWithId(int employeeId) throws SQLException {
         var sql = "select ID, firstname, lastname, birthdate from Employee where id = ?";
         try (var con = getConnection();
              var stmt = con.prepareStatement(sql)) {
@@ -38,7 +38,7 @@ public class EmployeeStorageImpl implements EmployeeStorage {
                     var firstname = resultSet.getString("firstname");
                     var lastname = resultSet.getString("lastname");
                     var birthdate = resultSet.getDate("birthdate");
-                    return new Customer(id, firstname, lastname, birthdate);
+                    return new Employee(id, firstname, lastname, birthdate);
                 }
                 return null;
             }
@@ -69,7 +69,7 @@ public class EmployeeStorageImpl implements EmployeeStorage {
 
     @Override
     public int createEmployee(EmployeeCreation employeeToCreate) throws SQLException {
-        var sql = "insert into Employee(firstname, lastname) values (?, ?,?)";
+        var sql = "insert into Employee(firstname, lastname, birthdate) values (?, ?,?)";
         try (var con = getConnection();
              var stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, employeeToCreate.getFirstname());

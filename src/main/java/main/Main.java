@@ -6,6 +6,8 @@ import datalayer.customer.CustomerStorageImpl;
 import dto.employee.Employee;
 import servicelayer.customer.CustomerServiceException;
 import servicelayer.customer.CustomerServiceImpl;
+import servicelayer.employee.EmployeeServiceException;
+import servicelayer.employee.EmployeeServiceImpl;
 
 import java.sql.SQLException;
 
@@ -19,21 +21,22 @@ public class Main {
     private static final String pass = "testuser123";
 
 
-    public static void main(String[] args) throws SQLException, CustomerServiceException {
+    public static void main(String[] args) throws SQLException, CustomerServiceException, EmployeeServiceException {
 //customerStorage.createCustomer(new CustomerCreation("Filip","Filipovic", null ));
 //customerServiceImpl.createCustomer("hello", "hellovic", null);
         CustomerStorageImpl customerStorage = new CustomerStorageImpl(conStr, user, pass);
         EmployeeStorageImpl employeesStorage = new EmployeeStorageImpl(conStr, user, pass);
 
         CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl(customerStorage);
+        EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl(employeesStorage);
 
 
         populateDummyCustomer(customerServiceImpl);
-        //populateDummyEmployees();
-       // populateDummyBookings();
+        populateDummyEmployees(employeeServiceImpl);
+        // populateDummyBookings();
 
         soutCusomers(customerStorage);
-       // soutEmployees(employeesStorage);
+        soutEmployees(employeesStorage);
 
 
         System.out.println("The end.");
@@ -61,8 +64,8 @@ public class Main {
         customerServiceImpl.createCustomer("Nina", "Ninasen", null);
     }
 
-    public static void populateDummyEmployees() {
-
+    public static void populateDummyEmployees(EmployeeServiceImpl employeeServiceImpl) throws EmployeeServiceException {
+        employeeServiceImpl.createEmployee("emp", "Empsen", null);
     }
 
     public static void populateDummyBookings() {

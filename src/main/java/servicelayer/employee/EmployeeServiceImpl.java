@@ -2,7 +2,6 @@ package servicelayer.employee;
 
 
 import datalayer.employee.EmployeeStorage;
-import dto.customer.Customer;
 import dto.employee.Employee;
 import dto.employee.EmployeeCreation;
 
@@ -20,7 +19,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 
     @Override
-    public int createEmplyee(String firstName, String lastName, Date birthdate) throws EmployeeServiceException {
+    public int createEmployee(String firstName, String lastName, Date birthdate) throws EmployeeServiceException {
         try {
             return employeeStorage.createEmployee(new EmployeeCreation(firstName, lastName, birthdate));
         } catch (SQLException throwables) {
@@ -29,12 +28,12 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Customer getEmployeeById(int id) throws SQLException {
+    public Employee getEmployeeById(int id) throws SQLException {
         return employeeStorage.getEmployeeWithId(id);
     }
 
     @Override
-    public Collection<Employee> getEmplpyeesByFirstName(String firstName) {
+    public Collection<Employee> getEmployeesByFirstName(String firstName) {
         return null;
     }
 }
