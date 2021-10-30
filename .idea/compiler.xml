@@ -9,7 +9,11 @@
         <module name="BookingSystem" />
         <module name="database" />
         <module name="test2020fall-BookingSystem" />
+        <module name="Test-Assignment-3" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="test2020fall-BookingSystem" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
