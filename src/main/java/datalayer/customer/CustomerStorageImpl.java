@@ -71,7 +71,10 @@ public class CustomerStorageImpl implements CustomerStorage {
             var stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, customerToCreate.getFirstname());
             stmt.setString(2, customerToCreate.getLastname());
-            stmt.setDate(3, (Date) customerToCreate.getBirthdate());
+            // passes it from util.Date to sql.Date for the sql string above
+            java.util.Date utilDate = customerToCreate.getBirthdate();
+            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            stmt.setDate(3, sqlDate);
 
             stmt.executeUpdate();
 

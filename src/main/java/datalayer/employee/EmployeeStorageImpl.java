@@ -74,7 +74,10 @@ public class EmployeeStorageImpl implements EmployeeStorage {
              var stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, employeeToCreate.getFirstname());
             stmt.setString(2, employeeToCreate.getLastname());
-            stmt.setDate(3, (java.sql.Date) employeeToCreate.getBirthdate());
+            // passes it from util.Date to sql.Date for the sql string above
+            java.util.Date utilDate = employeeToCreate.getBirthdate();
+            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+            stmt.setDate(3, sqlDate);
 
             stmt.executeUpdate();
 

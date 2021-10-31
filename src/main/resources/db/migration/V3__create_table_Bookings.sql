@@ -10,6 +10,6 @@ create table Bookings (
 		references Customers(ID)
 		on delete cascade,	
 	foreign key (employeeId)	
-		references Employees(ID)
+		references Employee(ID)
 		on delete cascade	
 )
