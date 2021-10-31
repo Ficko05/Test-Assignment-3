@@ -13,7 +13,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Test-Assignment-3" target="13" />
-      <module name="test2020fall-BookingSystem" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

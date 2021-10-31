@@ -21,6 +21,11 @@ public class Main {
     //run docker and run this command
     //docker run -d --rm --name mysql-test-db -e MYSQL_ROOT_PASSWORD=testuser123 -p 3307:3306 mysql
     //create a db connection port 3307 and schema called TestASS
+    //
+    //if i have maven istalled do this:
+    //mvn flyway:migrate
+
+
 
     private static final String conStr = "jdbc:mysql://localhost:3307/TestASS";
     private static final String user = "root";

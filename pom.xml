@@ -17,9 +17,9 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>7.0.0</version>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3306/</url>
+                    <url>jdbc:mysql://localhost:3307/TestASS</url>
                     <user>root</user>
-                    <password>schmeep7</password>
+                    <password>testuser123</password>
                     <defaultSchema>DemoApplication</defaultSchema>
                     <createSchemas>true</createSchemas>
                     <schemas>
@@ -155,7 +155,15 @@
 
     </dependencies>
 
+
+
     <properties>
+        <!--
+        <flyway.user>databaseUser</flyway.user>
+        <flyway.password>databasePassword</flyway.password>
+        <flyway.schemas>schemaName</flyway.schemas>
+        -->
+
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
