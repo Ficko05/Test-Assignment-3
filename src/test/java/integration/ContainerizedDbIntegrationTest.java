@@ -28,7 +28,7 @@ public class ContainerizedDbIntegrationTest {
     }
 
     protected String getDb() {
-        return "DemoApplicationTest";
+        return "TestASS";
     }
 
     protected String getConnectionString() {
