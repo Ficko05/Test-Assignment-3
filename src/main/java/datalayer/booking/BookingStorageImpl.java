@@ -5,7 +5,7 @@ import dto.booking.BookingCreation;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 public class BookingStorageImpl implements BookingStorage {
     private String connectionString;
@@ -43,7 +43,8 @@ public class BookingStorageImpl implements BookingStorage {
         }
     }
 
-    public List<Booking> getBookings() throws SQLException {
+    @Override
+    public Collection<Booking> getBookings() throws SQLException {
         try (var con = getConnection();
              var stmt = con.createStatement()) {
             var results = new ArrayList<Booking>();
@@ -67,6 +68,7 @@ public class BookingStorageImpl implements BookingStorage {
         }
     }
 
+    @Override
     public int createBooking(BookingCreation bookingToCreate) throws SQLException {
         var sql = "insert into Bookings(customerId, employeeId, date, start, end) values (?, ?, ?, ?, ?)";
         try (var con = getConnection();

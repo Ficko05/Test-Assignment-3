@@ -32,7 +32,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Collection<Booking> getBookingsById(int id) {
+    public Collection<Booking> getBookings() {
         return null;
     }
 }

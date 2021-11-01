@@ -28,12 +28,12 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Employee getEmployeeById(int id) throws SQLException {
+    public Employee getEmployeeWithId(int id) throws SQLException {
         return employeeStorage.getEmployeeWithId(id);
     }
 
     @Override
-    public Collection<Employee> getEmployeesByFirstName(String firstName) {
+    public Collection<Employee> getEmployees() {
         return null;
     }
 }

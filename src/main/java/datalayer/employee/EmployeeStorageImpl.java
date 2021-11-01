@@ -1,13 +1,12 @@
 package datalayer.employee;
 
-import dto.customer.Customer;
 import dto.employee.Employee;
 import dto.employee.EmployeeCreation;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 public class EmployeeStorageImpl implements EmployeeStorage {
 
@@ -46,7 +45,7 @@ public class EmployeeStorageImpl implements EmployeeStorage {
     }
 
     @Override
-    public List<Employee> getEmployee() throws SQLException {
+    public Collection<Employee> getEmployees() throws SQLException {
         try (var con = getConnection();
              var stmt = con.createStatement()) {
             var result = new ArrayList<Employee>();

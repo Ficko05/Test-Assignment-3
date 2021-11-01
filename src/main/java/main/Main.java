@@ -47,7 +47,6 @@ public class Main {
         soutEmployees(employeesStorage); //runs through the db and sout's them out in terminal
         soutBookings(bookingStorage); //runs through the db and sout's them out in terminal
 
-
         System.out.println("The end.");
     }
 
@@ -62,7 +61,7 @@ public class Main {
     }
 
     public static void soutEmployees(EmployeeStorageImpl employeesStorage) throws SQLException {
-        for (Employee e : employeesStorage.getEmployee()) {
+        for (Employee e : employeesStorage.getEmployees()) {
             System.out.println(toStringEmployee(e));
         }
         System.out.println("Got Employees");
@@ -82,7 +81,7 @@ public class Main {
     }
 
     public static void populateDummyEmployees(EmployeeServiceImpl employeeServiceImpl) throws EmployeeServiceException {
-        employeeServiceImpl.createEmployee("emp", "Empsen", new Date());
+        int testemp = employeeServiceImpl.createEmployee("emp", "Empsen", new Date());
     }
 
     public static void populateDummyBookings(BookingServiceImpl bookingServiceImpl) throws BookingServiceException {
