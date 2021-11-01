@@ -17,13 +17,13 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>7.0.0</version>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3306/</url>
+                    <url>jdbc:mysql://localhost:3307/TestASS</url>
                     <user>root</user>
-                    <password>schmeep7</password>
-                    <defaultSchema>DemoApplication</defaultSchema>
+                    <password>testuser123</password>
+                    <defaultSchema>TestASS</defaultSchema>
                     <createSchemas>true</createSchemas>
                     <schemas>
-                        <schema>DemoApplication</schema>
+                        <schema>TestASS</schema>
                     </schemas>
                 </configuration>
             </plugin>
