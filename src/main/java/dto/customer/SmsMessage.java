@@ -23,6 +23,14 @@ public class SmsMessage {
     }
 
     @Override
+    public String toString() {
+        return "SmsMessage{" +
+                "recipient='" + recipient + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

@@ -36,7 +36,7 @@ public class Main {
 
         CustomerServiceImpl customerServiceImpl = new CustomerServiceImpl(customerStorage);
         EmployeeServiceImpl employeeServiceImpl = new EmployeeServiceImpl(employeesStorage);
-        BookingServiceImpl bookingServiceImpl = new BookingServiceImpl(bookingStorage);
+        BookingServiceImpl bookingServiceImpl = new BookingServiceImpl(bookingStorage, customerServiceImpl);
 
 
         populateDummyCustomer(customerServiceImpl); //populates the sql db

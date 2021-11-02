@@ -1,6 +1,10 @@
 package servicelayer.notifications;
 
+import dto.customer.Customer;
 import dto.customer.SmsMessage;
+
+import java.sql.Time;
+import java.util.Date;
 
 public interface SmsService {
     /**
@@ -9,4 +13,6 @@ public interface SmsService {
      * @return true if success, false otherwise
      */
     boolean sendSms(SmsMessage message);
+
+    SmsMessage constructMessage(Customer customer, Date date, Time start, Time end);
 }
