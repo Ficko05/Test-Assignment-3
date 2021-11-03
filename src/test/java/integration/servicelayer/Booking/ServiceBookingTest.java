@@ -90,7 +90,7 @@ public class ServiceBookingTest extends ContainerizedDbIntegrationTest {
         // Arrange
         // Act
         var employee = employeeService.createEmployee("test1", "test2", new Date());
-        var employeeId = employeeService.getEmployeeWithId(employee).getId();
+        var employeeId = employeeService.getEmployeeById(employee).getId();
 
         bookingService.createBooking(1,employeeId,new Date(), new Time(12), new Time(13));
 
