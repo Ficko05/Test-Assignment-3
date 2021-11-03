@@ -3,9 +3,9 @@ Test Assignment #3
 
 Filip Filipovic. cph-ff37
 
-Allan Simonsen. cph-
+Allan Simonsen. cph-as484
 
-Nina Lisakowski cph-
+Nina Lisakowski cph-nl163
 ____
 # Setup
 
