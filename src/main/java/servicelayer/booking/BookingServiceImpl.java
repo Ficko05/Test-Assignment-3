@@ -35,4 +35,14 @@ public class BookingServiceImpl implements BookingService {
     public Collection<Booking> getBookings() {
         return null;
     }
+
+    @Override
+    public Collection<Booking> getBookingsForCustomer(int customerId) {
+        return bookingStorage.getBookingsForCustomer(customerId);
+    }
+
+    @Override
+    public Collection<Booking> getBookingsForEmployee(int employeeId) {
+        return null;
+    }
 }

@@ -11,4 +11,8 @@ public interface BookingService {
     int createBooking(int customerId, int employeeId, Date date, Time start, Time end) throws BookingServiceException;
     Booking getBookingById(int id) throws SQLException;
     Collection<Booking> getBookings();
+
+    Collection<Booking> getBookingsForCustomer(int customerId);
+    Collection<Booking> getBookingsForEmployee(int employeeId);
+    
 }

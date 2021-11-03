@@ -84,7 +84,6 @@ public class BookingStorageImpl implements BookingStorage {
             stmt.setTime(4, bookingToCreate.getStart());
             stmt.setTime(5, bookingToCreate.getEnd());
 
-
             stmt.executeUpdate();
 
             // get the newly created id
