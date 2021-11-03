@@ -44,9 +44,9 @@ public class ServiceBookingTest extends ContainerizedDbIntegrationTest {
         customerStorage = new CustomerStorageImpl(getConnectionString(), "root", getDbPassword());
         employeeStorage = new EmployeeStorageImpl(getConnectionString(), "root", getDbPassword());
 
-        bookingService = new BookingServiceImpl(bookingStorage);
         employeeService = new EmployeeServiceImpl(employeeStorage);
         customerService = new CustomerServiceImpl(customerStorage);
+        bookingService = new BookingServiceImpl(bookingStorage, customerService);
 
         customerService.createCustomer("Filip", "Filipsen", new Date());
         customerService.createCustomer("Filip2", "Filipsen2", new Date());
