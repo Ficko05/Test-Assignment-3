@@ -54,7 +54,7 @@ public class Main {
     public static void soutCusomers(CustomerStorageImpl customerStorage) throws SQLException {
         System.out.println("Got customers: ");
         for (Customer c : customerStorage.getCustomers()) {
-            System.out.println(toStringCosumer(c));
+            System.out.println(toStringCostumer(c));
         }
         System.out.println("Got Customers: ");
 
@@ -81,7 +81,7 @@ public class Main {
     }
 
     public static void populateDummyEmployees(EmployeeServiceImpl employeeServiceImpl) throws EmployeeServiceException {
-        int testemp = employeeServiceImpl.createEmployee("emp", "Empsen", new Date());
+        employeeServiceImpl.createEmployee("emp", "Empsen", new Date());
     }
 
     public static void populateDummyBookings(BookingServiceImpl bookingServiceImpl) throws BookingServiceException {
@@ -90,7 +90,7 @@ public class Main {
     }
 
 
-    public static String toStringCosumer(Customer c) {
+    public static String toStringCostumer(Customer c) {
         return "{" + c.getId() + ", " + c.getFirstname() + ", " + c.getLastname() + "}";
     }
 
