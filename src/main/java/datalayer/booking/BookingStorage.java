@@ -12,4 +12,6 @@ public interface BookingStorage {
     public int createBooking(BookingCreation bookingToCreate) throws SQLException;
 
     public Collection<Booking> getBookingsForCustomer(int customerId) throws SQLException;
+
+    Collection<Booking> getBookingsForEmployee(int employeeId) throws SQLException;
 }

@@ -27,14 +27,12 @@ import java.util.Date;
 @Tag("integration")
 public class ServiceBookingTest extends ContainerizedDbIntegrationTest {
 
-
     private BookingServiceImpl bookingService;
     private BookingStorageImpl bookingStorage;
     private EmployeeServiceImpl employeeService;
     private EmployeeStorageImpl employeeStorage;
     private CustomerServiceImpl customerService;
     private CustomerStorageImpl customerStorage;
-
 
 
     @BeforeEach
@@ -69,6 +67,37 @@ public class ServiceBookingTest extends ContainerizedDbIntegrationTest {
         assertEquals(booking2,bookingsById2);
         assertNotEquals(booking,bookingsById2);
 
+    }
 
+    @Test
+    public void mustReturnBookingWithCustomerId() throws CustomerServiceException, SQLException, BookingServiceException {
+        // Arrange
+        // Act
+        var customer = customerService.createCustomer("test1", "test2", new Date());
+        var customerId = customerService.getCustomerById(customer).getId();
+
+        bookingService.createBooking(customerId,1,new Date(), new Time(12), new Time(13));
+
+        var booking = bookingService.getBookingsForCustomer(customerId);
+
+        // Assert
+        assertTrue(booking.stream().anyMatch(x ->
+                x.getCustomerId() == customerId));
+    }
+
+    @Test
+    public void mustReturnBookingWithEmployeeId() throws SQLException, BookingServiceException, EmployeeServiceException {
+        // Arrange
+        // Act
+        var employee = employeeService.createEmployee("test1", "test2", new Date());
+        var employeeId = employeeService.getEmployeeWithId(employee).getId();
+
+        bookingService.createBooking(1,employeeId,new Date(), new Time(12), new Time(13));
+
+        var booking = bookingService.getBookingsForEmployee(employeeId);
+
+        // Assert
+        assertTrue(booking.stream().anyMatch(x ->
+                x.getEmployeeId() == employeeId));
     }
 }

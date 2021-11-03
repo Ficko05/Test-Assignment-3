@@ -12,7 +12,7 @@ public interface BookingService {
     Booking getBookingById(int id) throws SQLException;
     Collection<Booking> getBookings();
 
-    Collection<Booking> getBookingsForCustomer(int customerId);
-    Collection<Booking> getBookingsForEmployee(int employeeId);
+    Collection<Booking> getBookingsForCustomer(int customerId) throws SQLException;
+    Collection<Booking> getBookingsForEmployee(int employeeId) throws SQLException;
     
 }

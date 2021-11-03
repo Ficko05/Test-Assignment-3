@@ -37,12 +37,12 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Collection<Booking> getBookingsForCustomer(int customerId) {
+    public Collection<Booking> getBookingsForCustomer(int customerId) throws SQLException {
         return bookingStorage.getBookingsForCustomer(customerId);
     }
 
     @Override
-    public Collection<Booking> getBookingsForEmployee(int employeeId) {
-        return null;
+    public Collection<Booking> getBookingsForEmployee(int employeeId) throws SQLException {
+        return bookingStorage.getBookingsForEmployee(employeeId);
     }
 }
