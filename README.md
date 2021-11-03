@@ -14,7 +14,7 @@ ____
 3. IDE, we used IntelliJ
 
 ______
-#How to run the project
+# How to run the project
 
 1. Setup docker's virtual mysql server with this command: docker run -d --rm --name mysql-test-db -e MYSQL_ROOT_PASSWORD=testuser123 -p 3307:3306 mysql
 2. Connect to the docker database through your client with the username and password we setup earlier: uname: root, pw: testuser123. look in main if i doubt
