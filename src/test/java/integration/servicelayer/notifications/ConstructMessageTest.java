@@ -1,25 +1,18 @@
 package integration.servicelayer.notifications;
 
-import datalayer.customer.CustomerStorage;
-import datalayer.customer.CustomerStorageImpl;
-import dto.customer.Customer;
+import as.dto.customer.Customer;
 import dto.customer.SmsMessage;
-import integration.ContainerizedDbIntegrationTest;
 import org.junit.jupiter.api.*;
-import servicelayer.customer.CustomerService;
-import servicelayer.customer.CustomerServiceException;
-import servicelayer.customer.CustomerServiceImpl;
-import servicelayer.notifications.SmsService;
-import servicelayer.notifications.SmsServiceImpl;
+import as.servicelayer.notifications.SmsService;
+import as.servicelayer.notifications.SmsServiceImpl;
 
-import java.sql.SQLException;
 import java.sql.Time;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@Tag("Unit Test")
+@Tag("UnitTest")
 public class ConstructMessageTest {
 
     SmsService smsService;

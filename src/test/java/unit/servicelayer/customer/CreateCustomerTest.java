@@ -5,9 +5,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-import servicelayer.customer.CustomerService;
-import servicelayer.customer.CustomerServiceException;
-import servicelayer.customer.CustomerServiceImpl;
+import as.servicelayer.customer.CustomerService;
+import as.servicelayer.customer.CustomerServiceException;
+import as.servicelayer.customer.CustomerServiceImpl;
 
 import java.sql.SQLException;
 import java.util.Date;

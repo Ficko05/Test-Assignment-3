@@ -1,10 +1,10 @@
 package integration.servicelayer.notifications;
 
-import dto.customer.Customer;
+import as.dto.customer.Customer;
 import dto.customer.SmsMessage;
 import org.junit.jupiter.api.*;
-import servicelayer.notifications.SmsService;
-import servicelayer.notifications.SmsServiceImpl;
+import as.servicelayer.notifications.SmsService;
+import as.servicelayer.notifications.SmsServiceImpl;
 
 import java.sql.Time;
 import java.util.Date;
@@ -12,7 +12,7 @@ import java.util.Date;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@Tag("Unit Test")
+@Tag("UnitTest")
 public class SendSmsTest {
 
     SmsService smsService;
